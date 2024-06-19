@@ -1,0 +1,40 @@
+<dx-data-grid
+  id="gridContainer"
+  keyExpr="EmployeeID"
+  [showBorders]="true"
+  height="70vh"
+  [dataSource]="service.customDataSource"
+  allowColumnReordering="true"
+  allowColumnResizing="true"
+  columnAutoWidth="true">
+  <dxi-column dataField="FullName"></dxi-column>
+  <dxi-column dataField="EMPCode"></dxi-column>
+  <dxi-column dataField="Mobile"></dxi-column>
+  <dxi-column dataField="Position"></dxi-column>
+  <dxo-column-fixing [enabled]="true"></dxo-column-fixing>
+  <dxo-remote-operations
+    [groupPaging]="true">
+  </dxo-remote-operations>
+  <dxo-scrolling rowRenderingMode="virtual"> </dxo-scrolling>
+  <dxo-paging enabled="true" [pageIndex]="0" [pageSize]="10"> </dxo-paging>
+  <dxo-pager infoText="'صفحه {0} از {1} ({2} ردیف)'"
+             [allowedPageSizes]="[5,10,15,20,50]"
+             [showInfo]="true"
+             [showNavigationButtons]="true"
+             [showPageSizeSelector]="true"
+             [visible]="true">
+  </dxo-pager>
+</dx-data-grid>
+
+
+<!--<table class="table">-->
+<!--  <tr *ngFor="let emp of service.list">-->
+<!--    <td (click)="populateForm(emp)">{{emp.FullName}}</td>-->
+<!--    <td (click)="populateForm(emp)">{{emp.EMPCode}}</td>-->
+<!--    <td (click)="populateForm(emp)">{{emp.Mobile}}</td>-->
+<!--    <td (click)="populateForm(emp)">{{emp.Position}}</td>-->
+<!--    <td>-->
+<!--      <button (click)="onDelete(emp.EmployeeID)" class="btn btn-sm btn-outline-danger">X</button>-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--</table>-->
